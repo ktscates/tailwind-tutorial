@@ -10,10 +10,8 @@ if (!__dirname.includes('node_modules')) {
 global.__vite_start_time = Date.now()
 
 // check debug mode first before requiring the CLI.
-const debugIndex = process.argv.findIndex((arg) => /^(?:-d|--debug)$/.test(arg))
-const filterIndex = process.argv.findIndex((arg) =>
-  /^(?:-f|--filter)$/.test(arg)
-)
+const debugIndex = process.argv.indexOf('--debug')
+const filterIndex = process.argv.indexOf('--filter')
 const profileIndex = process.argv.indexOf('--profile')
 
 if (debugIndex > 0) {
